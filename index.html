@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src = "https://kit.fontawesome.com/26d4a64054.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div class="nav">
+        <!-- <div class="leftblank"></div> -->
+
+        <div class="logo">
+            <img src="FlipkartLogo.png">
+        </div>
+        <input type="text" class="search" placeholder="Search by products or brand name"> <i class="fas fa-search" id="fafa"></i>
+        <div class="logIn" id="modalLogin">Login </div>
+        <!-- <button class="logIn" id="modalLogin" >Login</button> -->
+        <div class="more">More <i class="fas fa-arrow-down    "></i>
+        <!-- <ul>
+            <li>Notification Preferences</li>
+            <li>Sell on Flipkart</li>
+            <li>24*7 Customer care</li>
+            <li>Advertise</li>
+            <li>Download App</li>
+        </ul> -->
+        </div>
+        <div class="cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</div>
+        <!-- <div class="rightblank"></div> -->
+        
+    </div>
+    <div class="modal" id="modalid">
+        <div class="modalcontent" id="modContId">
+            <div class="mleft"><span class="lLogin">Login</span>
+            <span class="lBak">Get access to your <br> Orders, Wishlist and <br> Recommendations</span></div>
+            <div class="mright">
+                <input type="text" class="uName" placeholder="username">
+                <input type="text" class="uPaswrd" placeholder="password">
+                <button class="boton">Login</button>
+
+                <span class="close">close</span></div>
+        </div>
+    </div>
+    <div  >
+        <img alt="img" name = "slide" class="flashSale" >
+    </div>
+</div>
+    <script>
+    var modlid =  document.getElementById("modalid");
+    var clos = document.getElementsByClassName("close")[0];
+    var butn = document.getElementById("modalLogin");
+    var x =[];
+         x[0] = "1.png";
+         x[1] = "2.jpg";
+         x[2] = "3.jpg";
+         x[3] = "4.png";
+         x[4] = "5.jpg";
+         x[5] = "6.png";
+         var i = 0;
+    butn.onclick = function (){
+        modlid.style.display = "block";
+    }
+    clos.onclick = function(){
+        modlid.style.display = "none";
+    }
+
+
+    function chngImg(){
+             document.slide.src = x[i];
+             if(i<x.length-1){
+                 i++;
+             }
+             else{
+                 i = 0;
+             }
+             setTimeout("chngImg()",2000);
+         }
+        
+window.onload = chngImg;
+
+         
+    
+    </script>
+</body>
+</html>
